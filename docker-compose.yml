@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DOMAIN=${DOMAIN}
+        - TRON_NETWORK=${TRON_NETWORK}
+        - CONTRACT_ADDRESS=${CONTRACT_ADDRESS}
+        - TOKEN_ADDRESS=${TOKEN_ADDRESS}
+        - TOKEN_DECIMALS=${TOKEN_DECIMALS}
+        - TOKEN_SYMBOL=${TOKEN_SYMBOL}
+    ports:
+      - 127.0.0.1:3000:3000
